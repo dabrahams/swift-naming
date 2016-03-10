@@ -62,8 +62,10 @@ protocol SetAlgebra : Equatable, ArrayLiteralConvertible {
   mutating func remove(member: Element) -> Element?
 
   func isSubset(of other: Self) -> Bool
+  func isStrictSubset(of other: Self) -> Bool
   func isDisjoint(with other: Self) -> Bool
   func isSuperset(of other: Self) -> Bool
+  func isStrictSuperset(of other: Self) -> Bool
 
   var isEmpty: Bool { get }
   
