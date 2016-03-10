@@ -24,15 +24,15 @@ y.insertContents(removingCommonElementsOf: z)
 
 ~~~swift
 protocol SetAlgebra : Equatable, ArrayLiteralConvertible {
-  func union(other: Self) -> Self
-  func intersection(other: Self) -> Self
-  func subtracting(other: Self) -> Self
-  func symmetricDifference(of other: Self) -> Self
+  func insertingContents(of other: Self) -> Self
+  func removingElements(notIn other: Self) -> Self
+  func removingElements(in other: Self) -> Self
+  func insertingContents(removingCommonElementsOf other: Self) -> Self
 
-  mutating func formUnion(of other: Self)
-  mutating func formIntersection(other: Self)
-  mutating func subtract(other: Self)
-  mutating func formSymmetricDifference(other: Self)
+  mutating func insertContents(of other: Self)
+  mutating func removeElements(notIn other: Self)
+  mutating func removeElements(in other: Self)
+  mutating func insertContents(removingCommonElementsOf other: Self)
 
   associatedtype Element
   
@@ -40,8 +40,8 @@ protocol SetAlgebra : Equatable, ArrayLiteralConvertible {
   
   func contains(member: Element) -> Bool
 
-  mutating func insert(member: Element)
-  mutating func remove(member: Element) -> Element?
+  mutating func insert(x: Element)
+  mutating func remove(possibleMember: Element) -> Element?
 
   func isSubset(of other: Self) -> Bool
   func isDisjoint(with other: Self) -> Bool
