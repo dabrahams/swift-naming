@@ -35,8 +35,8 @@ if x.allContentsAreContained(in: y)
    && x.containsAllContentsAndMore(of: z)
    && !y.isEmpty { ... }
    
-if Set.element(a, subsumes: b)
-   && Set.element(b, isDisjointWith: c) { ... }
+if Set.element(a, implies: b)
+   && Set.element(b, doesNotOverlap: c) { ... }
 ~~~
 
 ## Declaration
@@ -72,7 +72,7 @@ protocol SetAlgebra : Equatable, ArrayLiteralConvertible {
   
   init<S : Sequence where S.Iterator.Element == Element>(_ sequence: S)
 
-  static func element(a: Element, subsumes b: Element) -> Bool
-  static func element(a: Element, isDisjointWith b: Element) -> Bool
+  static func element(a: Element, implies b: Element) -> Bool
+  static func element(a: Element, doesNotOverlap b: Element) -> Bool
 }
 ~~~
