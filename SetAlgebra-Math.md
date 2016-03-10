@@ -1,23 +1,40 @@
 ---
 layout: page
-title: SetAlgebra / InPlace
+title: SetAlgebra / Math
 ---
-`SetAlgebra` realized using an `InPlace` suffix. 
+`SetAlgebra` realized using math terms. 
 
 ## Usage
 
 ~~~swift
+var x: Set = [1], y: Set = [2], z: Set = [3]
+let a = 10, b = 20, c = 30
+
 x = y.union(z)
-y.unionInPlace(z)                    // y = y.union(z)
+y.formUnion(z)                         // y = y.union(z)
 
 x = y.intersection(z)
-y.intersectionInPlace(z)                 // y = y.intersection(z)
+y.formIntersection(z)                 // y = y.intersection(z)
 
 x = y.subtracting(z)
-y.subtractInPlace(z)                     // y = y.subtracting(z)
+y.subtract(z)                         // y = y.subtracting(z)
 
 x = y.symmetricDifference(z)
-y.symmetrictDifferenceInPlace(z)         // y = y.symmetricDifference(z)
+y.formSymmetrictDifference(z)         // y = y.symmetricDifference(z)
+
+if x.contains(c) { ... }
+
+y.insert(a)
+y.remove(b)
+
+if x.isSubset(of: y) && y.isStrictSubset(of: z)
+   && z.isDisjoint(with: x)
+   && y.isSuperset(of: z)
+   && x.isStrictSuperset(of: z)
+   && !y.isEmpty { ... }
+   
+if Set.element(a, subsumes: b)
+   && Set.element(b, isDisjointWith: c) { ... }
 ~~~
 
 ## Declaration
@@ -29,12 +46,10 @@ protocol SetAlgebra : Equatable, ArrayLiteralConvertible {
   func subtracting(other: Self) -> Self
   func symmetricDifference(of other: Self) -> Self
 
-  mutating func unionInPlace(of other: Self)
-  mutating func intersectionInPlace(other: Self)
-  mutating func subtractInPlace(other: Self)  
-  mutating func symmetricDifferenceInPlace(other: Self)
-
-  // --- names in question end here ---
+  mutating func formUnion(of other: Self)
+  mutating func formIntersection(other: Self)
+  mutating func subtract(other: Self)
+  mutating func formSymmetricDifference(other: Self)
 
   associatedtype Element
   
