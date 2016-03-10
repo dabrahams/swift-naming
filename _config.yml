@@ -13,6 +13,7 @@ description: > # > means to ignore newlines until the next unindented line
 timezone: America/Los_Angeles
 baseurl: ""
 url: "http://dabrahams.github.io"
+safe: true
 
 exclude: [config.ru, Gemfile, Gemfile.lock, Procfile, vendor, README.md]
 
@@ -20,10 +21,12 @@ exclude: [config.ru, Gemfile, Gemfile.lock, Procfile, vendor, README.md]
 # github_username:  jekyll
 
 # Build settings
-# markdown: kramdown
+markdown: kramdown
 
-#kramdown:
-#    syntax_highlighter: rouge
+kramdown:
+    syntax_highlighter: rouge
+
+highlighter: rouge
 
 sass:
     style: compressed
