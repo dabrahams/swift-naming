@@ -28,7 +28,8 @@ if x.contains(c) { ... }
 y.insert(a)
 y.remove(b)
 
-if x.isSubset(of: y) && y.isStrictSubset(of: z)
+if x.isSubset(of: y) 
+   && y.isStrictSubset(of: z)
    && z.isDisjoint(with: x)
    && y.isSuperset(of: z)
    && x.isStrictSuperset(of: z)
