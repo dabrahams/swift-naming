@@ -1,10 +1,14 @@
+---
+layout: page
+title: SetAlgebra / InPlace
+---
 `SetAlgebra` realized using an `InPlace` suffix. 
 
 ## Usage
 
-```swift
+~~~swift
 x = y.union(z)
-y.unionInPlace(of: z)                    // y = y.union(z)
+y.unionInPlace(z)                    // y = y.union(z)
 
 x = y.intersection(z)
 y.intersectionInPlace(z)                 // y = y.intersection(z)
@@ -14,11 +18,11 @@ y.subtractInPlace(z)                     // y = y.subtracting(z)
 
 x = y.symmetricDifference(z)
 y.symmetrictDifferenceInPlace(z)         // y = y.symmetricDifference(z)
-```
+~~~
 
 ## Declaration
 
-```swift
+~~~swift
 protocol SetAlgebra : Equatable, ArrayLiteralConvertible {
   func union(other: Self) -> Self
   func intersection(other: Self) -> Self
@@ -52,4 +56,4 @@ protocol SetAlgebra : Equatable, ArrayLiteralConvertible {
   static func element(a: Element, subsumes b: Element) -> Bool
   static func element(a: Element, isDisjointWith b: Element) -> Bool
 }
-```
+~~~
