@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Arithmetic / Guidelines
+title: Arithmetic
 ---
-This is the `Arithmetic` protocol under the current guidelines.  [^1]
+This is the `Arithmetic` protocol, using `formRemainder` for the mutating operation.  [^1]
 
 ## Usage
 
@@ -21,7 +21,7 @@ x = y.divided(by: z)
 y.divide(by: z)                       // y = y.divided(by: z)
 
 x = y.remainder(dividingBy: z)
-y.formRemainder(dividingBy: z)        // y.remainder(dividingBy: z)
+y.formRemainder(dividingBy: z)        // y = y.remainder(dividingBy: z)
 ~~~
 
 ## Declaration
