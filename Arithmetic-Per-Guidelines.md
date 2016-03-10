@@ -21,7 +21,7 @@ x = y.divided(by: z)
 y.divide(by: z)                       // y = y.divided(by: z)
 
 x = y.remainder(dividingBy: z)
-y.replaceWithRemainder(dividingBy: z) // y.remainder(dividingBy: z)
+y.formRemainder(dividingBy: z)        // y.remainder(dividingBy: z)
 ~~~
 
 ## Declaration
@@ -38,7 +38,7 @@ protocol Arithmetic {
   mutating func subtract(other: Self)
   mutating func multiply(by other: Self)  
   mutating func divide(by other: Self)
-  mutating func replaceWithRemainder(dividingBy other: Self)
+  mutating func formRemainder(dividingBy other: Self)
 
   init()
 }
