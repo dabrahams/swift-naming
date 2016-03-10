@@ -12,7 +12,7 @@ description: > # > means to ignore newlines until the next unindented line
   Working Area for Swift Naming
 timezone: America/Los_Angeles
 baseurl: ""
-url: "http://dabrahams.github.io"
+url: "http://dabrahams.github.io/swift-naming"
 safe: true
 
 exclude: [config.ru, Gemfile, Gemfile.lock, Procfile, vendor, README.md]
