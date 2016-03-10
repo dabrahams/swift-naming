@@ -11,8 +11,8 @@ email: dabrahams@apple.com
 description: > # > means to ignore newlines until the next unindented line
   Working Area for Swift Naming
 timezone: America/Los_Angeles
-baseurl: ""
-url: "http://dabrahams.github.io/swift-naming"
+baseurl: "/swift-naming"
+url: "http://dabrahams.github.io"
 safe: true
 
 exclude: [config.ru, Gemfile, Gemfile.lock, Procfile, vendor, README.md]
