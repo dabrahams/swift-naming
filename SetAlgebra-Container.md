@@ -14,25 +14,25 @@ let a = 10, b = 20, c = 30
 x = y.insertingContents(of: z)
 y.insertContents(of: z)
 
-x = y.removingElements(notIn: z)
-y.removeElements(notIn: z)
+x = y.removingContents(notInCommonWith: z)
+y.removeContents(notInCommonWith: z)
 
-x = y.removingElements(in: z)
-y.removeElements(in: z)
+x = y.removingContents(inCommonWith: z)
+y.removeContents(inCommonWith: z)
 
-x = y.insertingContents(removingCommonElements: z)
-y.insertContents(removingCommonElements: z)
+x = y.insertingContents(removingCommonContents: z)
+y.insertContents(removingCommonContents: z)
 
 if x.contains(c) { ... }
 
 y.insert(a)
 y.remove(b)
 
-if x.allElementsAreContained(in: y) 
-   && y.allElementsAndMoreAreContained(in: z)
-   && z.hasNoElementsInCommon(with: x)
-   && y.containsAllElements(of: z)
-   && x.containsAllElementsAndMore(of: z)
+if x.allContentsAreContained(in: y) 
+   && y.allContentsAndMoreAreContained(in: z)
+   && z.hasNoContentsInCommon(with: x)
+   && y.containsAllContents(of: z)
+   && x.containsAllContentsAndMore(of: z)
    && !y.isEmpty { ... }
    
 if Set.element(a, subsumes: b)
@@ -44,14 +44,14 @@ if Set.element(a, subsumes: b)
 ~~~swift
 protocol SetAlgebra : Equatable, ArrayLiteralConvertible {
   func insertingContents(of other: Self) -> Self
-  func removingElements(notIn other: Self) -> Self
-  func removingElements(in other: Self) -> Self
-  func insertingContents(removingCommonElements other: Self) -> Self
+  func removingContents(notInCommonWith other: Self) -> Self
+  func removingContents(inCommonWith other: Self) -> Self
+  func insertingContents(removingCommonContents other: Self) -> Self
 
   mutating func insertContents(of other: Self)
-  mutating func removeElements(notIn other: Self)
-  mutating func removeElements(in other: Self)
-  mutating func insertContents(removingCommonElement other: Self)
+  mutating func removeContents(notInCommonWith other: Self)
+  mutating func removeContents(inCommonWith other: Self)
+  mutating func insertContents(removingCommonContents other: Self)
 
   associatedtype Element
   
@@ -62,11 +62,11 @@ protocol SetAlgebra : Equatable, ArrayLiteralConvertible {
   mutating func insert(member: Element)
   mutating func remove(member: Element) -> Element?
 
-  func allElementsAreContained(in other: Self) -> Bool
-  func allElementsAndMoreAreContained(in other: Self) -> Bool
-  func hasNoElementsInCommon(with other: Self) -> Bool
-  func containsAllElements(of other: Self) -> Bool
-  func containsAllElementsAndMore(of other: Self) -> Bool
+  func allContentsAreContained(in other: Self) -> Bool
+  func allContentsAndMoreAreContained(in other: Self) -> Bool
+  func hasNoContentsInCommon(with other: Self) -> Bool
+  func containsAllContents(of other: Self) -> Bool
+  func containsAllContentsAndMore(of other: Self) -> Bool
 
   var isEmpty: Bool { get }
   
