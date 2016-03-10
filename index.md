@@ -5,4 +5,4 @@ title: Welcome Swift Naming
 
 # Welcome to Swift Naming
 
-Work on naming guidelines materials.
+Please select a sub-page at left.
