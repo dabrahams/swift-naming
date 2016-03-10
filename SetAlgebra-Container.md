@@ -2,6 +2,7 @@
 layout: page
 title: SetAlgebra / Container
 ---
+
 `SetAlgebra` realized using container-like terms. 
 
 ## Usage

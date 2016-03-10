@@ -2,6 +2,7 @@
 layout: page
 title: Arithmetic
 ---
+
 This is the `Arithmetic` protocol, using `formRemainder` for the mutating operation.  [^1]
 
 ## Usage

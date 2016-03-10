@@ -2,6 +2,7 @@
 layout: page
 title: SetAlgebra / Final
 ---
+
 This is what Tony announced to swift-evolution as our final decision.[^1]
 
 ## Usage

@@ -2,6 +2,7 @@
 layout: page
 title: SetAlgebra / Math
 ---
+
 `SetAlgebra` realized using math terms. 
 
 ## Usage
