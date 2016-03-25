@@ -21,7 +21,7 @@ x = y.subtracting(z)
 y.subtract(z)                         // y = y.subtracting(z)
 
 x = y.symmetricDifference(from: z)
-y.formSymmetrictDifference(from: z)   // y = y.symmetricDifference(from: z)
+y.formSymmetricDifference(from: z)   // y = y.symmetricDifference(from: z)
 
 if x.contains(c) { ... }
 
