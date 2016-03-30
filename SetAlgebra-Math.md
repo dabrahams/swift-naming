@@ -20,8 +20,8 @@ y.formIntersection(z)                 // y = y.intersection(z)
 x = y.subtracting(z)
 y.subtract(z)                         // y = y.subtracting(z)
 
-x = y.symmetricDifference(from: z)
-y.formSymmetricDifference(from: z)   // y = y.symmetricDifference(from: z)
+x = y.symmetricDifference(z)
+y.formSymmetricDifference(z)         // y = y.symmetricDifference(z)
 
 if x.contains(c) { ... }
 
@@ -46,12 +46,12 @@ protocol SetAlgebra : Equatable, ArrayLiteralConvertible {
   func union(other: Self) -> Self
   func intersection(other: Self) -> Self
   func subtracting(other: Self) -> Self
-  func symmetricDifference(from other: Self) -> Self
+  func symmetricDifference(other: Self) -> Self
 
   mutating func formUnion(other: Self)
   mutating func formIntersection(other: Self)
   mutating func subtract(other: Self)
-  mutating func formSymmetricDifference(from other: Self)
+  mutating func formSymmetricDifference(other: Self)
 
   associatedtype Element
   
