@@ -32,7 +32,7 @@ sass:
     style: compressed
     sass_dir: _sass
 
-gems:
+plugins:
   - jekyll-redirect-from
 
 whitelist:
